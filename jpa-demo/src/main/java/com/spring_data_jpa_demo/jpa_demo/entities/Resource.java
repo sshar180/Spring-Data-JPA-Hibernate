@@ -9,18 +9,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "SECTION_TBL")
+@Table(name = "RESOURCE_TBL")
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Section {
-
+public class Resource {
     @Id
     @GeneratedValue
     private Integer id;
     private String name;
-    private Integer sectionOrder;
+    private int size;
+    private String url;
 
 }

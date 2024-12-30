@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Table(name = "AUTHOR_TBL")
 @Entity
@@ -55,5 +56,7 @@ public class Author {
     @Column(name = "lastModifiedAt", insertable = false)
     private LocalDateTime lastModifiedAt;
 
+    @ManyToMany(mappedBy = "authors")
+    private List<Course> courses;
 
 }
