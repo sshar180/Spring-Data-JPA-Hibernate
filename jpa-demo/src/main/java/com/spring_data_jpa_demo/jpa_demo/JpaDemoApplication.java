@@ -1,7 +1,9 @@
 package com.spring_data_jpa_demo.jpa_demo;
 
 import com.spring_data_jpa_demo.jpa_demo.entities.Author;
+import com.spring_data_jpa_demo.jpa_demo.entities.Video;
 import com.spring_data_jpa_demo.jpa_demo.repository.AuthorRepository;
+import com.spring_data_jpa_demo.jpa_demo.repository.VideoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +21,9 @@ public class JpaDemoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(AuthorRepository authorRepository) {
+	public CommandLineRunner commandLineRunner(AuthorRepository authorRepository,
+		VideoRepository videoRepository
+	) {
 		return 	args -> {
 //			Author author = new Author();
 //			author.setFirstName("John");
@@ -29,15 +33,22 @@ public class JpaDemoApplication {
 //			author.setCreatedAt(LocalDateTime.now());
 //			author.setLastModifiedAt(LocalDateTime.now());
 
-			var author = new Author().builder()
-					.firstName("John")
-					.lastName("Doe")
-					.email("email@email.com")
-					.age(25)
-					.createdAt(LocalDateTime.now())
+//			var author = new Author().builder()
+//					.firstName("John")
+//					.lastName("Doe")
+//					.email("email@email.com")
+//					.age(25)
+//					.createdAt(LocalDateTime.now())
+//					.build();
+
+			var video = new Video().builder()
+					.name("video")
+					.length(5)
 					.build();
 
-			authorRepository.save(author);
+
+//			authorRepository.save(author);
+			videoRepository.save(video);
 		};
 	}
 

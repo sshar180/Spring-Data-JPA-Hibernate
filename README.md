@@ -22,3 +22,9 @@ postgres:15`
 
 ![img_1.png](img_1.png)
 
+
+**_Default Discriminator Column_**
+![img_2.png](img_2.png)
+**_Custom Discriminator Column_**
+![img_3.png](img_3.png)
+
