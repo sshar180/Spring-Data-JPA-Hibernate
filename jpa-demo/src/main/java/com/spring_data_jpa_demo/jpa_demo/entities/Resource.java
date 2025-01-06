@@ -1,20 +1,19 @@
 package com.spring_data_jpa_demo.jpa_demo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Table(name = "RESOURCE_TBL")
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Resource {
     @Id
     @GeneratedValue
@@ -22,5 +21,9 @@ public class Resource {
     private String name;
     private int size;
     private String url;
+
+    @OneToOne
+    @JoinColumn(name = "lecture_id")
+    private Lecture lecture;
 
 }

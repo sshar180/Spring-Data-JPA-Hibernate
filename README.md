@@ -17,3 +17,8 @@
 -v /Users/shubhamsharma/Documents/Git/Data-Volume:/var/lib/postgresql/data \
 postgres:15`
 
+**Database diagram with all the mappings.**
+
+
+![img_1.png](img_1.png)
+

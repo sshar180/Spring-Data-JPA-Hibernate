@@ -26,4 +26,7 @@ public class Course {
             joinColumns = {@JoinColumn(name = "course_id")}, // we can have multiple columns
             inverseJoinColumns = {@JoinColumn(name = "author_id")})
     private List<Author> authors;
+
+    @OneToMany(mappedBy = "courses")
+    private List<Section> sections;
 }
