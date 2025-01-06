@@ -11,7 +11,10 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-@DiscriminatorValue("T")
+/**
+ * Only for Single table Strategy
+ * @DiscriminatorValue("T")
+ */
 public class Text extends Resource {
 
     String content;

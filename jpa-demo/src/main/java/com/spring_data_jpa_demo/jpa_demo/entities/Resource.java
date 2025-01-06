@@ -13,8 +13,14 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
+/**
+ * // This is only for Single table strategy and Discriminator column is only for
+ * single table
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "resource_type")
+
+ */
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Resource {
     @Id
     @GeneratedValue

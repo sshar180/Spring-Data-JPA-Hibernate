@@ -11,7 +11,10 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-@DiscriminatorValue("F")
+/**
+ * Only for Single table Strategy
+ * @DiscriminatorValue("F")
+ */
 public class File extends Resource {
 
     String type;
