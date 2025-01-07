@@ -13,14 +13,24 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
+
 /**
  * // This is only for Single table strategy and Discriminator column is only for
  * single table
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "resource_type")
-
  */
-@Inheritance(strategy = InheritanceType.JOINED)
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+//@DiscriminatorColumn(name = "resource_type")
+
+/**
+ * This is only for Join table strategy
+ */
+//@Inheritance(strategy = InheritanceType.JOINED)
+
+/**
+ * This is only for Table per class strategy
+ * In this case all the child table will have the column of the parent class
+ */
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Resource {
     @Id
     @GeneratedValue
